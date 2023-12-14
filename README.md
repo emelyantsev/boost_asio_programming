@@ -7,4 +7,4 @@
 
 ### Useful links:
 
-1. How to use io_context instead of deprecated io_service [link](https://stackoverflow.com/questions/59753391/boost-asio-io-service-vs-io-context)
+1. How to use **io_context** instead of *deprecated* **io_service**. [link](https://stackoverflow.com/questions/59753391/boost-asio-io-service-vs-io-context)
