@@ -26,6 +26,7 @@
               "*.cpp",
               "-o",
               "${fileDirnameBasename}",
+              "-lboost_thread"
           ],
           "options": {
               "cwd": "${fileDirname}"
