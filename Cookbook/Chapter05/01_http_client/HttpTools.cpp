@@ -35,7 +35,7 @@ namespace http_errors {
 
 
 
-
+// -------------------------- Http response -------------------------- //
 
 HTTPResponse::HTTPResponse() : m_response_stream(&m_response_buf) {}
 
@@ -43,27 +43,22 @@ HTTPResponse::HTTPResponse() : m_response_stream(&m_response_buf) {}
 unsigned int HTTPResponse::get_status_code() const {
 
     return m_status_code;
-
 }
 
 const std::string& HTTPResponse::get_status_message() const {
 
     return m_status_message;
-
 }
 
 const std::map<std::string, std::string>& HTTPResponse::get_headers() {
 
     return m_headers;
-
 }
 
 const std::istream& HTTPResponse::get_response() const {
 
     return m_response_stream;
-
 }
-
 
 boost::asio::streambuf& HTTPResponse::get_response_buf() {
 
@@ -81,12 +76,13 @@ void HTTPResponse::set_status_message(const std::string& status_message) {
 }
 
 
-void HTTPResponse::add_header(const std::string& name, const std::string& value)
-{
+void HTTPResponse::add_header(const std::string& name, const std::string& value) {
+
     m_headers[name] = value;
 }
 
 
+// --------------- http request -------------------------  //
 
 HTTPRequest::HTTPRequest(boost::asio::io_context& io_ctx, unsigned int id) :
 
@@ -105,42 +101,35 @@ void HTTPRequest::set_host(const std::string& host) {
     m_host = host;
 }
 
-
 void HTTPRequest::set_port(unsigned int port) {
 
     m_port = port;
 }
-
 
 void HTTPRequest::set_uri(const std::string& uri) {
 
     m_uri = uri;
 }
 
-
 void HTTPRequest::set_callback(Callback callback) {
 
     m_callback = callback;
 }
-
 
 std::string HTTPRequest::get_host() const {
 
     return m_host;
 }
 
-
 unsigned int HTTPRequest::get_port() const {
 
     return m_port;
 }
 
-
 const std::string& HTTPRequest::get_uri() const {
 
     return m_uri;
 }
-
 
 unsigned int HTTPRequest::get_id() const {
 
@@ -174,7 +163,6 @@ void HTTPRequest::execute() {
 
         }
     );
-
 }
 
 
@@ -189,8 +177,6 @@ void HTTPRequest::cancel() {
         m_sock.cancel();
     }
 }
-
-
 
 void HTTPRequest::on_host_name_resolved( const boost::system::error_code& ec, boost::asio::ip::tcp::resolver::iterator iterator)
 {
@@ -277,7 +263,6 @@ void HTTPRequest::on_request_sent(const boost::system::error_code& ec, std::size
     );
 }
 
-
 void HTTPRequest::on_status_line_received( const boost::system::error_code& ec, std::size_t bytes_transferred)
 {
     if (ec.value() != 0) {
@@ -351,7 +336,6 @@ void HTTPRequest::on_headers_received(const boost::system::error_code& ec, std::
 
     std::string header, header_name, header_value;
     std::istream response_stream( &m_response.get_response_buf() );
-
 
     while (true) {
 
