@@ -4,6 +4,7 @@
 2. [I/O operations](https://github.com/emelyantsev/boost_asio_programming/tree/main/Cookbook/Chapter02)
 3. [Implementing client applications](https://github.com/emelyantsev/boost_asio_programming/tree/main/Cookbook/Chapter03)
 4. [Implementing server](https://github.com/emelyantsev/boost_asio_programming/tree/main/Cookbook/Chapter04)
+5. [HTTP and SSL/TLS](https://github.com/emelyantsev/boost_asio_programming/tree/main/Cookbook/Chapter05)
 
 
 ### Useful links:
