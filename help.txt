@@ -3,3 +3,7 @@ netcat -l 3333
 echo -n "Hi!" | netcat -l 172.17.233.14  3333 -u
 
 python3 main.py
+
+source env/bin/activate
+
+pip install notebook

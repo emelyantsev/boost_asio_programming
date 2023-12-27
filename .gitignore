@@ -20,3 +20,5 @@ env/*
 
 .ipynb_checkpoints
 */.ipynb_checkpoints/*
+
+Cookbook/Chapter05/02_http_server/www/*

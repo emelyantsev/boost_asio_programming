@@ -1,6 +1,6 @@
 import urllib.request
 
-req = urllib.request.Request('http://localhost:8000/')
+req = urllib.request.Request('http://localhost:3333/echo')
 
 with urllib.request.urlopen(req) as response:
    
