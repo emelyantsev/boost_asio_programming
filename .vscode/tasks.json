@@ -12,6 +12,8 @@
               "${fileDirnameBasename}",
               "-lboost_thread",
               "-lboost_filesystem",
+              "-lssl",
+              "-lcrypto",
               "-std=c++20"
           ],
           "options": {
